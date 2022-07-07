@@ -1,0 +1,10 @@
+source leaprc.protein.ff14SB
+source leaprc.DNA.OL15
+source leaprc.lipid21
+source leaprc.water.tip3p
+source leaprc.gaff2
+
+SYS = loadpdb at.pdb
+solvateOct SYS TIP3PBOX 15
+saveAmberParm SYS molecule_solv.top molecule_solv.crd
+quit

@@ -1,0 +1,91 @@
+#################################################
+#### Main input for generating Cobramm files ####
+#################################################
+
+!pdb file with the geometry 
+coordinate file = 4EFG-H.pdb
+
+!the force fields which will be used (must be in /usr/local/src/amber11/dat/leap/cmd/ or in a sub-directory therein)
+force fields = leaprc.ff99SB
+
+!explicit definition of High layer atoms (numbering as in the pdb file)
+high layer atoms = 1738-1790
+
+!a list of QM charge/residue pairs used for reassigning the MM charges of the residues which are shared between H-M or H-L
+!QM charges of residues entirely in the High layer or shared between M-L do not need to be specified
+high layer charges = +1 108
+
+!explicit definition of Medium layer atoms (numbering as in the pdb file)
+medium layer atoms = 
+
+!in case of High-Medium and/or High-Low linking
+links = 1735-1738
+
+!automatic selection of residues in High layer or Medium layer:
+!  a) list of 3-letter codes (solvent comes first) and a letter indicating how H-bonded residues should be handled:
+!    a.1) 'H': H-bonded residues to High layer will be added to the High layer (e.g. WAT ALA GLU H);
+!    a.2) 'M': H-bonded residues to High layer and Medium layer will be added to the Medium layer (e.g WAT ALA GLU M);
+!  b) list of 3-letter codes (solvent comes first), a float (2.0,3.5, etc.) denoting the distance to look for resiudes to add in Medium layer and a scheme computing the distance:
+!    b.1) 'CoMH': center of mass of High layer
+!    b.2) 'CoMHM': center of mass of High layer and Medium layer
+!    b.3) 'DtH': distance to atoms from High layer
+!    b.4) 'DtHM': distance to atoms from HL and Medium layer
+automatic inclusion of residues to High and Medium layer = 
+
+!additional command lines (separated by a semicolon ";") for tleap considering the generation of model-H.top
+!(e.g. "bond model.2.SG model.5.SG" for S-S bonds as thay are not defined in the .pdb)
+tleap instructions for the high layer =
+
+!additional command lines (separated by a semicolon ";") for tleap considering the generation of real.top
+!(e.g. "bond real.2.SG real.5.SG" for S-S bonds as thay are not defined in the .pdb)
+tleap instructions for the whole system =
+
+############################################################################
+#### Additional information regarding pre-defined non-standard residues ####
+############################################################################
+
+!3 inputs needed for each non-standard residue: 
+!  a) a 3-letter code 
+!  b) file with atom names - atom types mapping & charges (.in, .mol2, .lib)
+!  c) file with additional parameters (.frcmod) 
+pre-defined non-standard residues = RET RET.lib RET.frcmod
+
+#################################################################################
+#### Additional information regarding non-standard residues (basic features) ####
+#################################################################################
+
+!3-letter code for each non-standard residue
+non-standard residues = 
+
+!-at in antechamber; atom type libraries for each non-standard residue; (either amber or gaff, default 'gaff')
+non-standard residues atom types = 
+
+!-p in parmchk; parmchk checks against parameter file ($AMBERHOME/dat/leap/parm) and write the missing parameters (default 'gaff.dat')
+non-standard residues parameters = 
+
+!-nc in antechamber; charge of each non-standard residue (default '0')
+non-standard residues charges = 
+
+!-c in antechamber; charge method for each non-standard residue (default 'bcc')
+non-standard residues charge methods =
+
+!additional antechamber keys besides -i, -fi, -o, -fo, -c, -nc, -at
+non-standard residues additional antechamber keys =
+
+########################################################################################
+#### Additional information the generation of initial conditions for MD simulations ####
+########################################################################################
+
+number of geometries = 
+
+!required for Low layer velocities when QM/MM computations were performed in with the High-Low scheme (High layer velocities are taken from Gaussian)
+MM geometry/velocity file = 
+
+!input file of the classical Amber MD simulation preceeding the QM/MM computations; it required so that the heating and solvent equilibration can be performed under the same conditions as the preceeding MD
+MM input file = 
+
+!topology file of the classical Amber MD simulation preceeding the QM/MM computations;
+MM topology file = 
+
+High and Medium layer MD constraints = 0
+
