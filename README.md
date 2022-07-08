@@ -14,4 +14,11 @@ In the COBRAMM folder you can find the files for 3 different exercises
 - Prepare_cobramm_input.pl is the cobramm script
 - RET.frcmod and RET.lib contain the information about the non standard residue
 
-In the SHARC_COBRAMM folder 
+In the SHARC_COBRAMM folder, inside input_files, you can find:
+
+- SHARC template for MOLCAS and COBRAMM 
+- MOLCAS and COBRAMM resources files
+- molden file containing the frequencies of the fulvene
+- auxiliary scritps (extract_xyz.sh and combine_initconds.py)
+- initial orbital for CASSCF calculation
+- slurm submission script
