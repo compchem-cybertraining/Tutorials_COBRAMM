@@ -13,3 +13,5 @@ In the COBRAMM folder you can find the files for 3 different exercises
 - 4EFG.pdb is the initial geometry of the protein in PDB format
 - Prepare_cobramm_input.pl is the cobramm script
 - RET.frcmod and RET.lib contain the information about the non standard residue
+
+In the SHARC_COBRAMM folder 
