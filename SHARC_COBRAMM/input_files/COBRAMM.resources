@@ -1,0 +1,5 @@
+cobrammdir $COBRAM_PATH/cobramm
+amberdir $AMBERHOME/
+scratchdir /projects/academic/cyberwksp21/Students/davagliano/sharc_cobramm/scratch
+memory 1000
+ncpu 1

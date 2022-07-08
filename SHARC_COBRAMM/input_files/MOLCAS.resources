@@ -1,0 +1,6 @@
+molcas $MOLCAS/
+scratchdir /projects/academic/cyberwksp21/Students/davagliano/sharc_cobramm//QMMM/QM
+savedir /projects/academic/cyberwksp21/Students/davagliano/sharc_cobram/TRAJ_00001//restart
+memory 2000
+ncpu 1
+project MOLCAS

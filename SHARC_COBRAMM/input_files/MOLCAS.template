@@ -1,0 +1,16 @@
+basis 6-31G*
+ras2 6
+nactel 6
+inactive 18
+roots 2 
+
+no-douglas-kroll
+method CASSCF
+
+cobramm
+
+#     Infos:
+#     emilio@gallium.itc.univie.ac.at
+#     Date: 2021-04-28 15:21:12.564940
+#     Current directory: /user/emilio/Project/Fulvene/SHARC_COBRAMM/onlygas
+
